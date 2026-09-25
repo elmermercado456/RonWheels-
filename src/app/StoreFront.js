@@ -1,10 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import { urlFor } from "@/sanity/lib/image";
+import { client } from "@/sanity/lib/client";
 
 export default function StoreFront({ products }) {
   const [filter, setFilter] = useState("all");
   const [scrolled, setScrolled] = useState(false);
+  const [liveProducts, setLiveProducts] = useState(products);
   const phoneNumber = "51929150727";
 
   useEffect(() => {
@@ -16,7 +18,19 @@ export default function StoreFront({ products }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const filteredProducts = filter === "all" ? products : products.filter(p => p.category === filter);
+  // Efecto para buscar nuevos productos automáticamente cada 5 segundos
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const query = `*[_type == "product"] | order(_createdAt desc)`;
+      const updatedProducts = await client.fetch(query);
+      setLiveProducts(updatedProducts);
+    };
+
+    const interval = setInterval(fetchProducts, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const filteredProducts = filter === "all" ? liveProducts : liveProducts.filter(p => p.category === filter);
 
   return (
     <>
