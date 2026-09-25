@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronwheels | Catálogo de Autos a Escala</title>
+    <meta name="description" content="Catálogo e-commerce de Ronwheels. Colecciona autos a escala, Hot Wheels, Mini GT y Dioramas. Entrega inmediata.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar glass">
+        <a href="#inicio" class="nav-brand">
+            <img src="logo.png" alt="RonWheels Logo" class="nav-logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#politicas">Políticas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="inicio" class="hero">
+        <h1>Colecciona tu pasión.<br>Acelera tu colección.</h1>
+        <p>Pasión por los autos a escala. Llevamos el automovilismo a tus manos. Ejemplares en su máxima expresión de detalle y realismo.</p>
+        <a href="#catalogo" class="btn-primary">Ver Catálogo</a>
+    </header>
+
+    <!-- Propuesta de Valor Section -->
+    <section id="propuesta" class="propuesta-valor">
+        <div class="propuesta-container">
+            <h2 class="propuesta-title">Propuesta de valor</h2>
+            <div class="propuesta-content">
+                <div class="propuesta-image">
+                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop" alt="Auto Porsche en carrera">
+                </div>
+                <div class="propuesta-text">
+                    <p>Hace poco más de un año, RonWheels nació como un simple hobby, impulsado por la pasión y la emoción que se siente al encontrar una pieza única. Con el tiempo, ese hobby se transformó en algo mucho más grande. Hoy, RonWheels busca transmitir esa misma pasión a cada persona que ama coleccionar, descubrir y apreciar el significado detrás de cada pieza.</p>
+                    <p class="propuesta-subtitle"><strong>Nuestra propuesta es simple...</strong></p>
+                    <div class="propuesta-box">
+                        Acompañarte en esa búsqueda, haciendo que cada colección crezca con identidad y sentimiento.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section id="catalogo" class="catalog">
+        <h2 class="section-title">Nuestro Catálogo</h2>
+        
+        <!-- Tabs / Filters -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="basic">Hot Wheels Básicos</button>
+            <button class="filter-btn" data-filter="premium">Hot Wheels Premium</button>
+            <button class="filter-btn" data-filter="minigt">Mini GT / Marcas Premium</button>
+            <button class="filter-btn" data-filter="diorama">Dioramas</button>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid">
+            
+            <!-- Tarjeta 1 (Basic) -->
+            <article class="product-card" data-category="basic">
+                <img src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?q=80&w=600&auto=format&fit=crop" alt="Porsche 911 GT3 RS" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Porsche 911 GT3 RS</h3>
+                    <span class="product-price">S/ 35.00</span>
+                    <span class="product-stock">Stock: 1</span>
+                    <a href="#" class="btn-whatsapp js-buy-btn" data-name="Porsche 911 GT3 RS" data-price="35.00">
+                        <i class="fab fa-whatsapp"></i> Comprar
+                    </a>
+                </div>
+            </article>
+
+            <!-- Tarjeta 2 (Premium) -->
+            <article class="product-card" data-category="premium">
+                <img src="https://images.unsplash.com/photo-1590362891991-f200c659c403?q=80&w=600&auto=format&fit=crop" alt="Nissan Skyline GT-R R34" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Nissan Skyline GT-R R34</h3>
+                    <span class="product-price">S/ 65.00</span>
+                    <span class="product-stock">Stock: 2</span>
+                    <a href="#" class="btn-whatsapp js-buy-btn" data-name="Nissan Skyline GT-R R34" data-price="65.00">
+                        <i class="fab fa-whatsapp"></i> Comprar
+                    </a>
+                </div>
+            </article>
+
+            <!-- Tarjeta 3 (Mini GT) -->
+            <article class="product-card" data-category="minigt">
+                <img src="https://images.unsplash.com/photo-1616423641403-68d74bf0800b?q=80&w=600&auto=format&fit=crop" alt="Lamborghini Aventador SVJ" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Lamborghini Aventador SVJ</h3>
+                    <span class="product-price">S/ 90.00</span>
+                    <span class="product-stock agotado">Agotado</span>
+                    <a href="#" class="btn-whatsapp js-buy-btn" data-name="Lamborghini Aventador SVJ" data-price="90.00">
+                        <i class="fab fa-whatsapp"></i> Comprar
+                    </a>
+                </div>
+            </article>
+
+            <!-- Tarjeta 4 (Diorama) -->
+            <article class="product-card" data-category="diorama">
+                <img src="https://images.unsplash.com/photo-1610444315264-b586d34b4c73?q=80&w=600&auto=format&fit=crop" alt="Garage Diorama 1:64" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Garage Diorama 1:64</h3>
+                    <span class="product-price">S/ 120.00</span>
+                    <span class="product-stock">Stock: 3</span>
+                    <a href="#" class="btn-whatsapp js-buy-btn" data-name="Garage Diorama 1:64" data-price="120.00">
+                        <i class="fab fa-whatsapp"></i> Comprar
+                    </a>
+                </div>
+            </article>
+            
+            <!-- Tarjeta 5 (Basic) -->
+            <article class="product-card" data-category="basic">
+                <img src="https://images.unsplash.com/photo-1594921919864-16a7516d2109?q=80&w=600&auto=format&fit=crop" alt="Ford Mustang Boss 302" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Ford Mustang Boss 302</h3>
+                    <span class="product-price">S/ 25.00</span>
+                    <span class="product-stock">Stock: 4</span>
+                    <a href="#" class="btn-whatsapp js-buy-btn" data-name="Ford Mustang Boss 302" data-price="25.00">
+                        <i class="fab fa-whatsapp"></i> Comprar
+                    </a>
+                </div>
+            </article>
+            
+            <!-- Tarjeta 6 (Mini GT) -->
+            <article class="product-card" data-category="minigt">
+                <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=600&auto=format&fit=crop" alt="Bugatti Chiron Pur Sport" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Bugatti Chiron Pur Sport</h3>
+                    <span class="product-price">S/ 95.00</span>
+                    <span class="product-stock">Stock: 1</span>
+                    <a href="#" class="btn-whatsapp js-buy-btn" data-name="Bugatti Chiron Pur Sport" data-price="95.00">
+                        <i class="fab fa-whatsapp"></i> Comprar
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Policies Section -->
+    <section id="politicas" class="policies">
+        <h2 class="section-title">POLÍTICAS DE VENTA</h2>
+        <div class="policies-grid">
+            <div class="policy-card">
+                <h3>Separación de piezas</h3>
+                <p>Separar con <strong>S/.5</strong> para compradores nuevos. Si no se concreta la compra, NO hay reclamos NI devoluciones.</p>
+            </div>
+            <div class="policy-card">
+                <h3>Entrega inmediata</h3>
+                <p>Toda pieza en este catálogo está lista para la <strong>entrega inmediata</strong>. Queda en la responsabilidad de la persona el día de recojo.</p>
+            </div>
+            <div class="policy-card">
+                <h3>Ventas a pedido /<br>Preventas</h3>
+                <p>Todo pedido en preventa está sujeta a <strong>variabilidad</strong> en la fecha de entrega <em>(puede tardar 1 mes o más)</em>.<br><br><strong>PROHIBIDO</strong> <em>cancelar pedidos de preventas.</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contacto" class="footer">
+        <div class="contact-container">
+            <h2>Ronald<br>Yopla</h2>
+            <div class="role">Administrador</div>
+            
+            <div class="contact-info">
+                <a href="https://instagram.com/Ron.wheels" target="_blank" class="contact-item">
+                    <i class="fab fa-instagram"></i> <u>Ron.wheels</u>
+                </a>
+                <a href="https://wa.me/51929150727" target="_blank" class="contact-item">
+                    <i class="fab fa-whatsapp"></i> <u>929 150 727</u>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
