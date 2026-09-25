@@ -18,11 +18,11 @@ export default function StoreFront({ products }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Le pedimos al servidor de Vercel que revise si hay autos nuevos cada 5 segundos
+  // Le pedimos al servidor de Vercel que revise si hay autos nuevos cada 1 segundo (super rápido)
   useEffect(() => {
     const interval = setInterval(() => {
       router.refresh();
-    }, 5000);
+    }, 1000);
     return () => clearInterval(interval);
   }, [router]);
 
