@@ -155,6 +155,17 @@ export default function StoreFront({ products }) {
           </div>
         </div>
       </footer>
+
+      {/* Botón Flotante de WhatsApp */}
+      <a 
+        href={`https://wa.me/${phoneNumber}?text=Hola,%20quiero%20hacer%20un%20pedido%20especial.%20Me%20pueden%20ayudar?`} 
+        target="_blank" 
+        rel="noreferrer" 
+        className="floating-whatsapp"
+      >
+        <i className="fab fa-whatsapp"></i>
+        <span>¿Quieres hacer pedidos especiales?<br/>Comunícate con nosotros</span>
+      </a>
     </>
   );
 }
