@@ -483,25 +483,52 @@ body {
     font-size: 1rem;
   }
 
+  /* Catálogo menos amontonado en celular */
+  .catalog {
+    padding: 4rem 15px; /* Menos padding lateral para aprovechar pantalla */
+  }
+
+  /* Filtros deslizables horizontalmente (Scroll) */
+  .filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 15px; /* Espacio para el scroll */
+    -webkit-overflow-scrolling: touch;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .filters::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+
+  .filter-btn {
+    flex: 0 0 auto; /* Evita que los botones se encojan */
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+
   .products-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem; /* Más separación vertical entre carros */
   }
   
   .product-img {
-    height: 150px;
+    height: 200px; /* Imagen más alta en celular para que luzca el carro */
   }
   
   .product-info {
-    padding: 1rem;
+    padding: 1.2rem;
   }
   
   .product-title {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .product-price {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .btn-whatsapp {
