@@ -517,40 +517,100 @@ body {
   right: 30px;
   background-color: #25D366;
   color: white;
-  border-radius: 50px;
-  padding: 10px 20px 10px 15px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
   text-decoration: none;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.95rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   z-index: 1000;
-  transition: var(--transition);
-  max-width: 85vw;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .floating-whatsapp i {
-  font-size: 2.2rem;
+  font-size: 2rem;
+  margin-top: 1px;
+}
+
+/* Burbuja de texto elegante */
+.floating-whatsapp span {
+  position: absolute;
+  right: 75px; /* A la izquierda del botón */
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--surface-dark);
+  color: var(--text-main);
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Triangulito de la burbuja */
+.floating-whatsapp span::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px 0 6px 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--surface-dark);
 }
 
 .floating-whatsapp:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
   color: white;
+}
+
+.floating-whatsapp:hover span {
+  opacity: 1;
+  visibility: visible;
 }
 
 @media (max-width: 600px) {
   .floating-whatsapp {
+    width: 50px;
+    height: 50px;
     bottom: 20px;
     right: 20px;
-    padding: 8px 15px 8px 10px;
-    font-size: 0.85rem;
-    line-height: 1.2;
   }
   .floating-whatsapp i {
     font-size: 1.8rem;
+  }
+  
+  /* En móviles mostramos la burbuja arriba siempre visible pero más discreta */
+  .floating-whatsapp span {
+    opacity: 1;
+    visibility: visible;
+    right: 0;
+    top: auto;
+    bottom: 60px; /* Encima del botón */
+    transform: none;
+    white-space: normal;
+    width: 200px;
+    text-align: right;
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+  
+  /* Triangulito apuntando abajo */
+  .floating-whatsapp span::after {
+    right: 15px;
+    bottom: -6px;
+    top: auto;
+    transform: none;
+    border-width: 6px 6px 0 6px;
+    border-color: var(--surface-dark) transparent transparent transparent;
   }
 }
