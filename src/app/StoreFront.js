@@ -26,7 +26,11 @@ export default function StoreFront({ products }) {
     return () => clearInterval(interval);
   }, [router]);
 
-  const filteredProducts = filter === "all" ? products : products.filter(p => p.category === filter);
+  const filteredProducts = products.filter(p => {
+    if (filter === "all") return true;
+    if (filter === "out-of-stock") return p.stock === 0;
+    return p.category === filter;
+  });
 
   return (
     <>
@@ -82,6 +86,8 @@ export default function StoreFront({ products }) {
           <button className={`filter-btn ${filter === 'premium' ? 'active' : ''}`} onClick={() => setFilter('premium')}>Hot Wheels Premium</button>
           <button className={`filter-btn ${filter === 'minigt' ? 'active' : ''}`} onClick={() => setFilter('minigt')}>Mini GT / Marcas Premium</button>
           <button className={`filter-btn ${filter === 'diorama' ? 'active' : ''}`} onClick={() => setFilter('diorama')}>Dioramas</button>
+          <button className={`filter-btn ${filter === 'preventa' ? 'active' : ''}`} onClick={() => setFilter('preventa')}>Preventas</button>
+          <button className={`filter-btn ${filter === 'out-of-stock' ? 'active' : ''}`} onClick={() => setFilter('out-of-stock')}>Sin Stock</button>
         </div>
 
         <div className="products-grid">

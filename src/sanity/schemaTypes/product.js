@@ -33,6 +33,7 @@ export const product = {
           { title: 'Hot Wheels Premium', value: 'premium' },
           { title: 'Mini GT / Marcas Premium', value: 'minigt' },
           { title: 'Dioramas', value: 'diorama' },
+          { title: 'Preventas', value: 'preventa' },
         ],
       },
       validation: (Rule) => Rule.required(),
