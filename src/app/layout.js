@@ -1,4 +1,5 @@
 import "./globals.css";
+import { SanityLive } from "@/sanity/lib/live";
 
 export const metadata = {
   title: "Ronwheels | Catálogo de Autos a Escala",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {children}
+        <SanityLive />
       </body>
     </html>
   );
