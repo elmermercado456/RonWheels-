@@ -22,7 +22,7 @@ export default function StoreFront({ products }) {
   useEffect(() => {
     const fetchProducts = async () => {
       const query = `*[_type == "product"] | order(_createdAt desc)`;
-      const updatedProducts = await client.fetch(query);
+      const updatedProducts = await client.fetch(query, {}, { cache: 'no-store' });
       setLiveProducts(updatedProducts);
     };
 
